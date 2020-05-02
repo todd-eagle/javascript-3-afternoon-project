@@ -23,7 +23,8 @@ var carDetails = {
 
 //Code Here
 
-
+const {color, make} = carDetails
+const {model, year} = carDetails
 
 ////////// PROBLEM 2 //////////
 
@@ -35,11 +36,14 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
+
+   const {title, firstName, lastName} = obj 
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+
 
 
 
@@ -53,8 +57,18 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+// let obj = {
+//   utah: 12,
+//   california: 45,
+//   texas: 34,
+//   arizona: 13
+// }
 
+//Code Here
+function totalPopulation(obj){
+  const {utah, california, texas, arizona} = obj
+  return utah +  california + texas + arizona
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -69,7 +83,12 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function ingredients(obj){
+  arr = []
+  const {carb, fat, protein} = obj
+    arr.push(carb, fat, protein)
+    return arr
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -87,6 +106,16 @@ function greeting( obj ) {
 
 //Code Here
 
+    function largeNumbers({first, second, third}){
+      let arr1=[]
+      arr1.push(first, second, third)
+    
+      const smallest = arr1.reduce((acc, element)=>{
+        return element < acc ? element : acc
+      })  
+      return smallest
+    }
+
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +127,16 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+function numberGroups({a,b,c}) {
+  let arr2=[]
+  arr2.push(a,b,c)
+
+   const largest = arr2.reduce((acc, element)=>{
+   return element.length > acc.length ? element : acc
+  })  
+  return largest
+}
+
 
 
