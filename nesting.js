@@ -50,9 +50,27 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+// function employeeUpdater(){
+//   for(let key in employees){
+//     if(employees[key]['firstName']==='Theo'){
+//       delete employees[key]
+//     }else if(employees[key]['firstName']==='Lorie'){
+//       employees[key]['department'] = 'HR'
+//     }   
+//   }
+//   return employees
+// }
 
-
+function employeeUpdater(){
+  employees.forEach((element, index)=>{
+      if(element.firstName == 'Theo'){
+        employees.splice(index,1)
+      }else if(element.firstName == 'Lorie'){
+        element.department = 'HR'
+      }
+  })
+  return employees
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -70,6 +88,12 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates(){
+  let removeDupe = workplaceAccidents.filter((element, index)=>{
+      return workplaceAccidents.indexOf(element) === index
+ })
+ return removeDupe
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,9 +121,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
+var grumpyActivity = cat.catFriends['0'].activities['1'];
+var fluffy2ndFriend = cat.catFriends['1'].name;
 
 
 ////////// PROBLEM 4 //////////
@@ -140,6 +163,17 @@ var myCar = {
 
 //Code Here
 
+// const {atFaultForAccident} = myCar.accidents[0]
+function recordCleaner() {
+  myCar.accidents.forEach((element, index)=>{   
+    if(element.atFaultForAccident===true){
+      element.atFaultForAccident = false
+    }
+  }) 
+  
+  return myCar
+
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -160,3 +194,13 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 //Code Here
 
 
+function looper(){
+  numsArr.forEach((element)=>{
+    element.forEach((innerElement, innerIndex)=>{
+     innerElement % 2===0 ? element[innerIndex] = 'even' : element[innerIndex] = 'odd'
+    })
+    return element
+  })
+
+  return numsArr
+}
